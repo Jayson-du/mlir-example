@@ -1,0 +1,22 @@
+/*
+ * Debug CMake - 运行cmake命令查看详细输出
+ */
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node-terminal",
+      "request": "launch",
+      "name": "CMake: Configure with Trace",
+      "command": "cmake -S . -B build --trace-expand --trace-redirect=cmake_trace.log && cat cmake_trace.log",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "request": "launch",
+      "name": "CMake: Configure Verbose",
+      "command": "cmake -S . -B build --debug-output -DCMAKE_VERBOSE_MAKEFILE=ON",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
